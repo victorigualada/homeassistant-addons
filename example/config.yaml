@@ -11,12 +11,14 @@ arch:
   - amd64
   - i386
 init: false
+startup: services
+host_network: false
+host_dbus: true
 map:
   - share:rw
 ports:
   8080/tcp: 8080
 options:
-  message: "Hello world..."
+  lock_MAC: null
 schema:
-  message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+  lock_MAC: str
