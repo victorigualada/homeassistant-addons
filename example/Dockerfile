@@ -14,16 +14,16 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
-RUN pip uninstall pycrypto
-RUN pip install pycryptodome
+RUN pip3 install -r requirements.txt
+RUN pip3 uninstall pycrypto
+RUN pip3 install pycryptodome
 
 COPY bridge/__main__.py .
 COPY bridge/nuki.py .
 COPY run.sh /
 
 # Generate nuki.yaml config file
-RUN python . --generate-config > nuki.yaml
+RUN python3 . --generate-config > nuki.yaml
 
 # Copy data for add-on
 COPY run.sh /
