@@ -26,10 +26,6 @@ function parse_yaml {
    }'
 }
 
-function clone_repo() {
-  cd "$DIR" && git clone https://github.com/dauden1184/RaspiNukiBridge.git && cd RaspiNukiBridge && pip install -r requirements.txt
-}
-
 function generate_config() {
   echo "-----------------------------------------------------------"
   echo "checking configuration file..."
@@ -109,7 +105,6 @@ function print_systemctl_config() {
         sudo systemctl start nukibridge.service"
 }
 
-clone_repo
 generate_config
 find_mac_address
 pair_lock

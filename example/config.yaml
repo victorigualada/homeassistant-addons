@@ -3,7 +3,7 @@ name: Example add-on
 version: "1.2.0"
 slug: example
 description: Example add-on
-url: "https://github.com/home-assistant/addons-example/tree/main/example"
+url: "https://github.com/victorigualada/homeassistant-addons/tree/main/example"
 arch:
   - armhf
   - armv7
@@ -11,13 +11,12 @@ arch:
   - amd64
   - i386
 init: false
-startup: services
-host_network: false
-host_dbus: true
 map:
   - share:rw
 ports:
   8080/tcp: 8080
+host_network: false
+host_dbus: true
 options:
   lock_MAC: null
 schema:
