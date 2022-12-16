@@ -3,20 +3,20 @@ FROM $BUILD_FROM
 
 WORKDIR /opt
 
+# Install requirements for add-on
 ENV PYTHONUNBUFFERED=1
 
-RUN apk add --no-cache --virtual .build-dependencies \
-    libc-dev=0.7.2-r3 \
-    py3-pip=20.3.4-r1 \
-    python3-dev=3.9.7-r4 \
+RUN apk add --no-cache build-base python3 python3-dev libffi-dev bluez libc-dev
 
-RUN apk add --no-cache \
-    build-base \
-    python3=3.9.7-r4 \
-    libffi-dev=3.4.2-r1 \
-    bluez=5.64-r0
+# RUN ln -sf python3 /usr/bin/python3
+RUN python3 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools
 
-RUN pip install --no-cache-dir -r /opt/requirements.txt
+COPY bridge/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# RUN pip3 uninstall pycrypto
+# RUN pip3 install pycryptodome
 
 COPY bridge/__main__.py .
 COPY bridge/nuki.py .
