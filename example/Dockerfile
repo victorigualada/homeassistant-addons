@@ -10,7 +10,7 @@ RUN apk add --no-cache build-base python3 libffi-dev bluez
 
 RUN ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools pynacl
+RUN pip3 install --no-cache --upgrade pip setuptools
 
 COPY requirements.txt .
 
