@@ -17,3 +17,7 @@ ports:
   8080/tcp: 8080
 host_network: false
 host_dbus: true
+options:
+  lock_MAC: null
+schema:
+  lock_MAC: str?
