@@ -8,9 +8,9 @@ ENV PYTHONUNBUFFERED=1
 
 RUN apk add --no-cache build-base python3 libffi-dev bluez
 
-RUN ln -sf python3 /usr/bin/python
+RUN ln -sf python3 /usr/bin/python3
 RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN pip3 install --no-cache --upgrade pip setuptools wheel
 
 COPY requirements.txt .
 
