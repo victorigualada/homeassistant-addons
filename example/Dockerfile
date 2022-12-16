@@ -14,9 +14,9 @@ RUN pip3 install --no-cache --upgrade pip setuptools wheel
 
 COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt
-RUN pip3 uninstall pycrypto
-RUN pip3 install pycryptodome
+# RUN pip3 install -r requirements.txt
+# RUN pip3 uninstall pycrypto
+# RUN pip3 install pycryptodome
 
 COPY bridge/__main__.py .
 COPY bridge/nuki.py .
