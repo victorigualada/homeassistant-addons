@@ -10,5 +10,3 @@ labels:
   org.opencontainers.image.description: "Automatic Nuki Bridge Addon"
   org.opencontainers.image.source: "https://github.com/victorigualada/homeassistant-addons"
   org.opencontainers.image.licenses: "Apache License 2.0"
-args:
-  TEMPIO_VERSION: "2021.09.0"
