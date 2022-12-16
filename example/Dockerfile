@@ -6,7 +6,7 @@ WORKDIR /opt
 # Install requirements for add-on
 ENV PYTHONUNBUFFERED=1
 
-RUN apk add --no-cache build-base python3 libffi-dev bluez
+RUN apk add --no-cache build-base python3 python3-dev libffi-dev bluez
 
 # RUN ln -sf python3 /usr/bin/python3
 RUN python3 -m ensurepip
