@@ -4,6 +4,7 @@ description: "Nuki Local Bridge inspired by RaspiNukiBridge"
 version: "1.0.0"
 slug: "nuki-bridge"
 url: "https://github.com/victorigualada/homeassistant-addons/tree/main/example"
+# image: "ghcr.io/victorigualada/image-{arch}-nuki-bridge"
 arch:
   - armhf
   - armv7
