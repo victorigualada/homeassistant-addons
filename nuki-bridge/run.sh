@@ -4,7 +4,7 @@
 # https://github.com/ftarolli/NukiBridgeAddon/blob/main/run.sh
 # which I adapted for this project.
 
-DIR=$HOME/.local/lib
+DIR=$1
 FILE=nuki.yaml
 SCAN_TIMEOUT_SEC=10
 VERBOSE=0
@@ -24,10 +24,6 @@ function parse_yaml {
          printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
       }
    }'
-}
-
-function clone_repo() {
-  cd "$DIR" && git clone https://github.com/dauden1184/RaspiNukiBridge.git && cd RaspiNukiBridge && pip install -r requirements.txt
 }
 
 function generate_config() {
@@ -109,7 +105,6 @@ function print_systemctl_config() {
         sudo systemctl start nukibridge.service"
 }
 
-clone_repo
 generate_config
 find_mac_address
 pair_lock

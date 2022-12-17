@@ -1,7 +1,7 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base-python/amd64:8.1.1
 FROM $BUILD_FROM
 
-WORKDIR /opt
+WORKDIR /opt/nuki-bridge
 
 # Install requirements for add-on
 ENV PYTHONUNBUFFERED=1
@@ -29,7 +29,7 @@ RUN python3 . --generate-config > nuki.yaml
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-CMD [ "/run.sh" ]
+CMD [ "/run.sh", "/opt/nuki-bridge" ]
 
 #ARG BUILD_FROM=ghcr.io/hassio-addons/base-python/amd64:8.1.1
 ## hadolint ignore=DL3006

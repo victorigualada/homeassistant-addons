@@ -1,9 +1,9 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Example add-on
-version: "1.2.0"
-slug: example
-description: Example add-on
-url: "https://github.com/victorigualada/homeassistant-addons/tree/main/example"
+name: "Nuki Bridge"
+description: "Nuki Local Bridge inspired by RaspiNukiBridge"
+version: "0.0.1"
+slug: "Nuki Bridge"
+url: "https://github.com/victorigualada/homeassistant-addons/tree/main/nuki-bridge"
 arch:
   - armhf
   - armv7
@@ -14,7 +14,7 @@ init: false
 map:
   - share:rw
 ports:
-  8080/tcp: 8080
+  8080/tcp: 8087
 host_network: false
 host_dbus: true
 options:
